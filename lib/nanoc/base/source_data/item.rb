@@ -232,7 +232,7 @@ module Nanoc
     #
     # @return [void]
     def freeze
-      attributes.freeze_recursively
+      # attributes.freeze_recursively
       children.freeze
       identifier.freeze
       raw_filename.freeze if raw_filename
