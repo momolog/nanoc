@@ -9,7 +9,7 @@ module Nanoc::ArrayExtensions
   # @return [Array] The converted array
   def symbolize_keys
     inject([]) do |array, element|
-      puts ">>> array symbolize >>> #{element} responds #{element.respond_to?(:symbolize:keys)}"
+      puts ">>> array symbolize >>> #{element} responds #{element.respond_to?(:symbolize_keys)}"
       array + [ element.respond_to?(:symbolize_keys) ? element.symbolize_keys : element ]
     end
   end
