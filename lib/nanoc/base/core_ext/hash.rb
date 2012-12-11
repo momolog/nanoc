@@ -8,6 +8,7 @@ module Nanoc::HashExtensions
   #
   # @return [Hash] The converted hash
   def symbolize_keys
+    puts "HASH symbolize_keys"
     inject({}) do |hash, (key, value)|
       puts ">>> hash symbolize >>> #{value} responds #{value.respond_to?(:symbolize_keys)}"
       hash.merge(key.to_sym => value.respond_to?(:symbolize_keys) ? value.symbolize_keys : value)
