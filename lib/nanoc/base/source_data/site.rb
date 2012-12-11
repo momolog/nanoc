@@ -351,6 +351,7 @@ module Nanoc
         warn DEFAULT_CONFIG.inspect
         warn YAML.load_file(config_path).inspect
         warn @config.inspect
+        warn ({'a' => 'aaa', 'b' => [['c', {'name' => 'c'}], ['d', {'name' => 'd'}]]}).symbolize_keys.inspect
         @config[:data_sources].map! { |ds| ds.symbolize_keys }
       else
         # Use passed config hash
