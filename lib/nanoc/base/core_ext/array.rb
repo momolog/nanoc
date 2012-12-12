@@ -12,7 +12,7 @@ module Nanoc::ArrayExtensions
       array + [ element.respond_to?(:symbolize_keys) ? element.symbolize_keys : element ]
     end
   end
-  alias :symbolize_keys :symbolise_keys
+  alias :symbolise_keys :symbolize_keys
 
   # Returns a new array where all items' keys are recursively converted to
   # strings by calling {Nanoc::ArrayExtensions#stringify_keys} or

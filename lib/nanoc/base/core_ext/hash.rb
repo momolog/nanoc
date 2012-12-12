@@ -12,7 +12,7 @@ module Nanoc::HashExtensions
       hash.merge(key.to_sym => value.respond_to?(:symbolize_keys) ? value.symbolize_keys : value)
     end
   end
-  alias :symbolize_keys :symbolise_keys
+  alias :symbolise_keys :symbolize_keys
 
   # Returns a new hash where all keys are recursively converted to strings by
   # calling {Nanoc::ArrayExtensions#stringify_keys} or
