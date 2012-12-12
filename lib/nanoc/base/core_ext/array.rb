@@ -8,12 +8,11 @@ module Nanoc::ArrayExtensions
   #
   # @return [Array] The converted array
   def symbolize_keys
-    warn "ARRAY symbolize_keys"
     inject([]) do |array, element|
-      warn ">>> array symbolize >>> #{element} responds #{element.respond_to?(:symbolize_keys)}"
       array + [ element.respond_to?(:symbolize_keys) ? element.symbolize_keys : element ]
     end
   end
+  alias :symbolize_keys :symbolise_keys
 
   # Returns a new array where all items' keys are recursively converted to
   # strings by calling {Nanoc::ArrayExtensions#stringify_keys} or

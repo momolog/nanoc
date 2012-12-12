@@ -8,12 +8,11 @@ module Nanoc::HashExtensions
   #
   # @return [Hash] The converted hash
   def symbolize_keys
-    warn "HASH symbolize_keys"
     inject({}) do |hash, (key, value)|
-      warn ">>> hash symbolize >>> #{value} responds #{value.respond_to?(:symbolize_keys)}"
       hash.merge(key.to_sym => value.respond_to?(:symbolize_keys) ? value.symbolize_keys : value)
     end
   end
+  alias :symbolize_keys :symbolise_keys
 
   # Returns a new hash where all keys are recursively converted to strings by
   # calling {Nanoc::ArrayExtensions#stringify_keys} or

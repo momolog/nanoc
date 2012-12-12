@@ -346,13 +346,8 @@ module Nanoc
 
         # Read config from config.yaml in given dir
         config_path = File.join(dir_or_config_hash, 'config.yaml')
-        warn ">>> reading config.yaml and symbolizing keys"
-        @config = DEFAULT_CONFIG.merge(YAML.load_file(config_path).symbolize_keys)
-        warn DEFAULT_CONFIG.inspect
-        warn YAML.load_file(config_path).inspect
-        warn @config.inspect
-        warn ({'a' => 'aaa', 'b' => [['c', {'name' => 'c'}], ['d', {'name' => 'd'}]]}).symbolize_keys.inspect
-        @config[:data_sources].map! { |ds| ds.symbolize_keys }
+        @config = DEFAULT_CONFIG.merge(YAML.load_file(config_path).symbolise_keys)
+        @config[:data_sources].map! { |ds| ds.symbolise_keys }
       else
         # Use passed config hash
         @config = DEFAULT_CONFIG.merge(dir_or_config_hash)
